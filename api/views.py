@@ -9,7 +9,9 @@ from django.http import JsonResponse
 from .utilities import TranslateNumber
 
 
-# Create your views here.
+# Hit this endpoint with POST: /api/num_to_english
+# Hit this endpoint with GET: /api/num_to_english?number=12345678
+# See ../bash_scripts to see how to hit this endpoint using "curl"
 class NumToEnglish(APIView):
     def get(self, request):
         number = request.GET.get("number", "")
