@@ -3,12 +3,13 @@
 ### Instructions to Run the Code
 
 1. Start up a virtual environment using "python -m venv venv"
-2. In a termianl, navigate to the directory where the requirements.txt is located.
-3. Run the command "pip install -r requirements.txt"
-4. Navigate to the directory where manage.py is located. It should be in the same directory
-5. Run "python manage.py runserver"
-6. In another terminal window navigate into the frontend folder, and run the command "npm run dev"
-7. Visit http://localhost:8000/num_translator in your browser to view the landing page.
+2. Activate the virtual environment using "source venv/bin/activate"
+3. Navigate to the directory where the requirements.txt is located.
+4. Run the command "pip install -r requirements.txt"
+5. Navigate into the frontend folder, and run the command "npm run dev"
+6. In another terminal navigate to the directory where manage.py is located.
+7. Run "python manage.py runserver"
+8. Visit http://localhost:8000/num_translator in your browser to view the landing page or try hitting the API endpoints (see below).
 
 ### Overview
 
