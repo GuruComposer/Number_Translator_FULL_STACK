@@ -1,5 +1,9 @@
 # Full Stack Number to English Translator
 
+### Overview
+
+This project was built using React.js on the frontend and Django on the backend.
+
 ### Instructions to Run the Code
 
 1. Start up a virtual environment using "python -m venv venv"
@@ -10,10 +14,6 @@
 6. In another terminal navigate to the directory where manage.py is located.
 7. Run "python manage.py runserver"
 8. Visit http://localhost:8000/num_translator in your browser to view the landing page or try hitting the API endpoints (see below).
-
-### Overview
-
-This project was built using React.js on the frontend and Django on the backend.
 
 ### views.py
 
