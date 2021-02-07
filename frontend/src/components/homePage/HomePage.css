@@ -1,0 +1,72 @@
+.translate__submitButtonPost {
+  background: #82cc7f;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  width: 100%;
+  height: 30px;
+  border: 1px solid;
+  border-color: #82a898 #12423c #bcacce;
+}
+.translate__submitButtonGet {
+  background: #82cc7f;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 30px;
+  border: 1px solid;
+  border-color: #82a898 #12423c #bcacce;
+}
+
+.translate__submitButton:hover {
+  background-color: rgb(45, 160, 189);
+}
+
+.english__number__container1 {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+}
+
+.english__number__container2 {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+}
+.english__number {
+  margin-bottom: 25px;
+}
+
+.english__number__spinner {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+}
+
+.english__number__title {
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+.english__number__title__hidden {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.home__container {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.error__text {
+  margin-top: 2px;
+  color: red;
+}
+
+.form__helper__text {
+  margin: auto;
+  width: 50%;
+}

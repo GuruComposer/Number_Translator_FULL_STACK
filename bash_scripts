@@ -1,0 +1,1 @@
+curl -X POST http://localhost:8000/api/num_to_english -H "Content-Type: application/json" -d '{"number": "12345678"}'
