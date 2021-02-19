@@ -6,6 +6,7 @@ class TranslateNumber:
         self.ones = {
             "0": "",
             "1": "one",
+            "01": "one",
             "2": "two",
             "3": "three",
             "4": "four",
@@ -116,6 +117,7 @@ class TranslateNumber:
     # THE PATTERN CHANGES FOR NUMBERS >= 1000000 !!!
     def million(self, number):
         mil_number = number
+        print(mil_number)
 
         # Numbers of length 1
         if len(str(mil_number)) == 1:
@@ -126,8 +128,12 @@ class TranslateNumber:
         # Numbers of length 2
         if len(str(mil_number)) == 2:
             if int(mil_number) < 20:
-                self.translation.append(self.teens[str(mil_number)])
-                self.translation.append("million")
+                if int(mil_number) > 9:
+                    self.translation.append(self.teens[str(mil_number)])
+                    self.translation.append("million")
+                else:
+                    self.translation.append(self.ones[str(mil_number)])
+                    self.translation.append("million")
                 return " ".join(self.translation)
             else:
                 self.translation.append(self.tens[str(mil_number)[0]])
