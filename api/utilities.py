@@ -62,13 +62,13 @@ class TranslateNumber:
         ):
             return "!!! ONE TRILLION !!!"
         if self.original_number < 1000000000000 and self.original_number >= 1000000000:
-            self.billion(self.original_number // 1000000000)
+            self.illion(self.original_number // 1000000000, size="billion")
             # extract rightmost 7 digits
             cur_number = self.original_number % 1000000000
             cur_number = cur_number // 1000000
-            self.million(cur_number)
+            self.illion(cur_number, size="million")
         if self.original_number >= 1000000 and self.original_number < 1000000000:
-            self.million(self.original_number // 1000000)
+            self.illion(self.original_number // 1000000, size="million")
         self.to_english_recursive(self.original_number % 1000000)
         solution = " ".join([number for number in self.translation if number])
         # print(" ".join(solution_list))
@@ -126,70 +126,40 @@ class TranslateNumber:
             return " ".join(self.translation)
 
     # THE PATTERN CHANGES FOR NUMBERS >= 1000000 !!!
-    def million(self, number):
-        mil_number = number
-        print("mil_number", mil_number)
+    def illion(self, number, size):
+        if size == "million":
+            place_holder = "million"
+        elif size == "billion":
+            place_holder = "billion"
+        il_number = number
+        print("mil_number", il_number)
 
         # Numbers of length 1
-        if len(str(mil_number)) == 1:
-            self.translation.append(self.ones[str(mil_number)])
-            if str(mil_number) != "0":
-                self.translation.append("million")
+        if len(str(il_number)) == 1:
+            self.translation.append(self.ones[str(il_number)])
+            if str(il_number) != "0":
+                self.translation.append(place_holder)
             return " ".join(self.translation)
 
         # Numbers of length 2
-        if len(str(mil_number)) == 2:
-            if int(mil_number) < 20:
-                if int(mil_number) > 9:
-                    self.translation.append(self.teens[str(mil_number)])
-                    self.translation.append("million")
+        if len(str(il_number)) == 2:
+            if int(il_number) < 20:
+                if int(il_number) > 9:
+                    self.translation.append(self.teens[str(il_number)])
+                    self.translation.append(place_holder)
                 else:
-                    self.translation.append(self.ones[str(mil_number)[1]])
-                    self.translation.append("million")
+                    self.translation.append(self.ones[str(il_number)[1]])
+                    self.translation.append(place_holder)
                 return " ".join(self.translation)
             else:
-                self.translation.append(self.tens[str(mil_number)[0]])
-                self.translation.append(self.ones[str(mil_number)[1]])
-                self.translation.append("million")
+                self.translation.append(self.tens[str(il_number)[0]])
+                self.translation.append(self.ones[str(il_number)[1]])
+                self.translation.append(place_holder)
                 return " ".join(self.translation)
 
         # Numbers of length 3
-        if len(str(mil_number)) == 3:
-            self.translation.append(self.ones[str(mil_number)[0]])
-            self.translation.append(self.large[str(len(str(mil_number)))])
-            self.million(str(mil_number)[1:])
-            return " ".join(self.translation)
-
-    # >= BILLION !!! ===> STIL NEEDS WORK ===> NOT FINISHED YET!
-    def billion(self, number):
-        bil_number = number
-        print("bil_number", bil_number)
-
-        # Numbers of length 1
-        if len(str(bil_number)) == 1:
-            self.translation.append(self.ones[str(bil_number)])
-            self.translation.append("billion")
-            return " ".join(self.translation)
-
-        # Numbers of length 2
-        if len(str(bil_number)) == 2:
-            if int(bil_number) < 20:
-                if int(bil_number) > 9:
-                    self.translation.append(self.teens[str(bil_number)])
-                    self.translation.append("billion")
-                else:
-                    self.translation.append(self.ones[str(bil_number)[1]])
-                    self.translation.append("billion")
-                return " ".join(self.translation)
-            else:
-                self.translation.append(self.tens[str(bil_number)[0]])
-                self.translation.append(self.ones[str(bil_number)[1]])
-                self.translation.append("billion")
-                return " ".join(self.translation)
-
-        # Numbers of length 3
-        if len(str(bil_number)) == 3:
-            self.translation.append(self.ones[str(bil_number)[0]])
-            self.translation.append(self.large[str(len(str(bil_number)))])
-            self.billion(str(bil_number)[1:])
+        if len(str(il_number)) == 3:
+            self.translation.append(self.ones[str(il_number)[0]])
+            self.translation.append(self.large[str(len(str(il_number)))])
+            self.illion(str(il_number)[1:], size=place_holder)
             return " ".join(self.translation)

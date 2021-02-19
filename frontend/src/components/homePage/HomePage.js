@@ -13,6 +13,7 @@ export default function HomePage(props) {
   const [error, setError] = useState("");
   const [validator_size, setSizeValidator] = useState("");
   const [validator_type, setTypeValidator] = useState("");
+  const [validator_IsPositive, setIsPositiveValidator] = useState("");
 
   const urlParams = new URLSearchParams(window.location.search);
   const get_number = urlParams.get("number");
@@ -42,8 +43,8 @@ export default function HomePage(props) {
 
   function validateIsPositive(number) {
     number.toString()[0] === "-"
-      ? setSizeValidator("Please do not submit negative numbers.")
-      : setSizeValidator("");
+      ? setIsPositiveValidator("Please do not submit negative numbers.")
+      : setIsPositiveValidator("");
   }
 
   async function handleClickPost(e) {
@@ -159,6 +160,9 @@ export default function HomePage(props) {
               </div>
               <div className="error__text">
                 {validator_type ? validator_type : null}
+              </div>
+              <div className="error__text">
+                {validator_IsPositive ? validator_IsPositive : null}
               </div>
               <div className="error__text">{error ? error : null}</div>
             </div>
