@@ -31,7 +31,7 @@ These API endpoints take in a string or an int of a number and return an english
 
 ### utilities.py
 
-The algorithm is built in a class called TranslateNumber that resides in the utilities.py folder. The algorithm is my 100% original work. It translates numbers 0 <= n <= 999,999,999
+The algorithm is built in a class called TranslateNumber that resides in the utilities.py folder. The algorithm is my 100% original work. It translates numbers 0 <= n <= 1,000,000,000,000
 
 ### tests.py
 

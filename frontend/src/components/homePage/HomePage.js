@@ -24,6 +24,7 @@ export default function HomePage(props) {
     // View the updated number
     validateInputSize(number);
     validateHasLetter(number);
+    validateIsPositive(number);
   });
 
   function validateInputSize(number) {
@@ -37,6 +38,12 @@ export default function HomePage(props) {
     regExp.test(number)
       ? setTypeValidator("No letters allowed.")
       : setTypeValidator("");
+  }
+
+  function validateIsPositive(number) {
+    number.toString()[0] === "-"
+      ? setSizeValidator("Please do not submit negative numbers.")
+      : setSizeValidator("");
   }
 
   async function handleClickPost(e) {

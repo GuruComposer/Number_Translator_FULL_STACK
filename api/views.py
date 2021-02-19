@@ -44,6 +44,19 @@ class NumToEnglish(APIView):
         if number:
             try:
                 number = int(number)
+                if number < 0:
+                    data = {
+                        "status": "Bad Request",
+                        "error": "No negative numbers, please.",
+                    }
+                    return (
+                        False,
+                        JsonResponse(
+                            data,
+                            status=status.HTTP_400_BAD_REQUEST,
+                            json_dumps_params={"indent": 2},
+                        ),
+                    )
             except:
                 data = {
                     "status": "Bad Request",
