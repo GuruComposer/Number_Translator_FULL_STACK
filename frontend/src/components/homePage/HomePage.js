@@ -135,7 +135,7 @@ export default function HomePage(props) {
           </div>
 
           <div className="form__helper__text">
-            <p>0 &lt;= n &lt;= 999,999,999</p>
+            <p>0 &lt;= n &lt;= 1,000,000,000,000</p>
           </div>
           <form>
             <div class="form-group">

@@ -106,3 +106,53 @@ class TranslatorTestCase(TestCase):
             TranslateNumber(999999999).to_english(),
             "nine hundred ninety nine million nine hundred ninety nine thousand nine hundred ninety nine",
         )
+
+    def test_26(self):
+        self.assertEqual(
+            TranslateNumber(101000000).to_english(),
+            "one hundred one million",
+        )
+
+    # billion and greater
+
+    def test_27(self):
+        self.assertEqual(
+            TranslateNumber(1000000000).to_english(),
+            "one billion",
+        )
+
+    def test_28(self):
+        self.assertEqual(
+            TranslateNumber(10000000001).to_english(),
+            "ten billion one",
+        )
+
+    def test_29(self):
+        self.assertEqual(
+            TranslateNumber(10101010101).to_english(),
+            "ten billion one hundred one million ten thousand one hundred one",
+        )
+
+    def test_30(self):
+        self.assertEqual(
+            TranslateNumber(111101010101).to_english(),
+            "one hundred eleven billion one hundred one million ten thousand one hundred one",
+        )
+
+    def test_31(self):
+        self.assertEqual(
+            TranslateNumber(111111111111).to_english(),
+            "one hundred eleven billion one hundred eleven million one hundred eleven thousand one hundred eleven",
+        )
+
+    def test_32(self):
+        self.assertEqual(
+            TranslateNumber(999999999999).to_english(),
+            "nine hundred ninety nine billion nine hundred ninety nine million nine hundred ninety nine thousand nine hundred ninety nine",
+        )
+
+    def test_33(self):
+        self.assertEqual(
+            TranslateNumber(1000000000000).to_english(),
+            "!!! ONE TRILLION !!!",
+        )

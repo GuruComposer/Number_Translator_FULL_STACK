@@ -144,7 +144,7 @@ class TranslateNumber:
                     self.translation.append(self.teens[str(mil_number)])
                     self.translation.append("million")
                 else:
-                    self.translation.append(self.ones[str(mil_number)[0]])
+                    self.translation.append(self.ones[str(mil_number)[1]])
                     self.translation.append("million")
                 return " ".join(self.translation)
             else:
