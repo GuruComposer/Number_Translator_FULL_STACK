@@ -178,7 +178,7 @@ class TranslateNumber:
                     self.translation.append(self.teens[str(bil_number)])
                     self.translation.append("billion")
                 else:
-                    self.translation.append(self.ones[str(bil_number)[0]])
+                    self.translation.append(self.ones[str(bil_number)[1]])
                     self.translation.append("billion")
                 return " ".join(self.translation)
             else:
