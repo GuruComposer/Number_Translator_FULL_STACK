@@ -67,7 +67,7 @@ class NumToEnglish(APIView):
                     json_dumps_params={"indent": 2},
                 ),
             )
-        if len(str(number)) > 9:
+        if len(str(number)) > 13:
             data = {
                 "status": "Bad Request",
                 "error": "Only numbers of length 9 or less are allowed.",

@@ -27,7 +27,7 @@ export default function HomePage(props) {
   });
 
   function validateInputSize(number) {
-    number.toString().length > 9
+    number.toString().length > 13
       ? setSizeValidator("Number is too large.")
       : setSizeValidator("");
   }
