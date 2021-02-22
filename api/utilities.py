@@ -132,7 +132,7 @@ class TranslateNumber:
         elif size == "billion":
             place_holder = "billion"
         il_number = number
-        print("mil_number", il_number)
+        print("il_number", il_number)
 
         # Numbers of length 1
         if len(str(il_number)) == 1:
